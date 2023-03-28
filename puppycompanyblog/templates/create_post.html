@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hello, {{current_user.username}}!</h1>
+<p>Lets write a post!</p>
+
+<form class="form-group" method="POST">
+    {{form.hidden_tag()}}
+
+    <div class="form-group">
+    {{form.title.label(class="form-control-label")}} 
+    {{form.title(class="form-control form-control-lg")}}
+    </div>
+
+    <div class="form-group">
+    {{form.text.label(class="form-control-label")}} 
+    {{form.text(class="form-control form-control-lg")}}<br>
+    </div>
+
+    <div class="form-group">
+    {{form.submit(class="btn btn-outline-info")}}
+    </div>
+
+
+</form>
+
+
+{% endblock %}
